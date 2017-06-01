@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ECB0D625354E3974136C037 /* libPods-ZWAdsStart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C701150E41700753E23F1C /* libPods-ZWAdsStart.a */; };
+		925F8B591EDECD9A009B0217 /* ZWAdsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F8B581EDECD9A009B0217 /* ZWAdsViewController.m */; };
+		925F8B5D1EDFF6EA009B0217 /* ZWAdsStartManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 925F8B5C1EDFF6EA009B0217 /* ZWAdsStartManager.m */; };
+		926EDBD81EDEBF5F006DD6A9 /* ZWAdsStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EDBD71EDEBF5F006DD6A9 /* ZWAdsStartView.m */; };
+		92CD3FC01EDEBE0800269925 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CD3FBF1EDEBE0800269925 /* main.m */; };
+		92CD3FC31EDEBE0800269925 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CD3FC21EDEBE0800269925 /* AppDelegate.m */; };
+		92CD3FC61EDEBE0800269925 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CD3FC51EDEBE0800269925 /* ViewController.m */; };
+		92CD3FC91EDEBE0800269925 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CD3FC71EDEBE0800269925 /* Main.storyboard */; };
+		92CD3FCB1EDEBE0800269925 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92CD3FCA1EDEBE0800269925 /* Assets.xcassets */; };
+		92CD3FCE1EDEBE0800269925 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CD3FCC1EDEBE0800269925 /* LaunchScreen.storyboard */; };
+		92CD3FD91EDEBE0800269925 /* ZWAdsStartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CD3FD81EDEBE0800269925 /* ZWAdsStartTests.m */; };
+		92CD3FE41EDEBE0800269925 /* ZWAdsStartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CD3FE31EDEBE0800269925 /* ZWAdsStartUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		92CD3FD51EDEBE0800269925 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92CD3FB31EDEBE0800269925 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92CD3FBA1EDEBE0800269925;
+			remoteInfo = ZWAdsStart;
+		};
+		92CD3FE01EDEBE0800269925 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92CD3FB31EDEBE0800269925 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 92CD3FBA1EDEBE0800269925;
+			remoteInfo = ZWAdsStart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21C701150E41700753E23F1C /* libPods-ZWAdsStart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZWAdsStart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		925F8B571EDECD9A009B0217 /* ZWAdsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWAdsViewController.h; sourceTree = "<group>"; };
+		925F8B581EDECD9A009B0217 /* ZWAdsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWAdsViewController.m; sourceTree = "<group>"; };
+		925F8B5B1EDFF6EA009B0217 /* ZWAdsStartManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWAdsStartManager.h; sourceTree = "<group>"; };
+		925F8B5C1EDFF6EA009B0217 /* ZWAdsStartManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWAdsStartManager.m; sourceTree = "<group>"; };
+		926EDBD61EDEBF5F006DD6A9 /* ZWAdsStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWAdsStartView.h; sourceTree = "<group>"; };
+		926EDBD71EDEBF5F006DD6A9 /* ZWAdsStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWAdsStartView.m; sourceTree = "<group>"; };
+		92CD3FBB1EDEBE0800269925 /* ZWAdsStart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWAdsStart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92CD3FBF1EDEBE0800269925 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		92CD3FC11EDEBE0800269925 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		92CD3FC21EDEBE0800269925 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		92CD3FC41EDEBE0800269925 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		92CD3FC51EDEBE0800269925 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		92CD3FC81EDEBE0800269925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		92CD3FCA1EDEBE0800269925 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		92CD3FCD1EDEBE0800269925 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		92CD3FCF1EDEBE0800269925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CD3FD41EDEBE0800269925 /* ZWAdsStartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWAdsStartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92CD3FD81EDEBE0800269925 /* ZWAdsStartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWAdsStartTests.m; sourceTree = "<group>"; };
+		92CD3FDA1EDEBE0800269925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CD3FDF1EDEBE0800269925 /* ZWAdsStartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWAdsStartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92CD3FE31EDEBE0800269925 /* ZWAdsStartUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWAdsStartUITests.m; sourceTree = "<group>"; };
+		92CD3FE51EDEBE0800269925 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6FBF9E6420A4F934EC05144 /* Pods-ZWAdsStart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWAdsStart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZWAdsStart/Pods-ZWAdsStart.release.xcconfig"; sourceTree = "<group>"; };
+		C1B38956E510FA463307E20B /* Pods-ZWAdsStart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZWAdsStart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZWAdsStart/Pods-ZWAdsStart.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		92CD3FB81EDEBE0800269925 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ECB0D625354E3974136C037 /* libPods-ZWAdsStart.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CD3FD11EDEBE0800269925 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CD3FDC1EDEBE0800269925 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7240644AE5630BB2E35EADE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21C701150E41700753E23F1C /* libPods-ZWAdsStart.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		925F8B5A1EDFF6A8009B0217 /* AdsStart */ = {
+			isa = PBXGroup;
+			children = (
+				925F8B571EDECD9A009B0217 /* ZWAdsViewController.h */,
+				925F8B581EDECD9A009B0217 /* ZWAdsViewController.m */,
+				926EDBD61EDEBF5F006DD6A9 /* ZWAdsStartView.h */,
+				926EDBD71EDEBF5F006DD6A9 /* ZWAdsStartView.m */,
+				925F8B5B1EDFF6EA009B0217 /* ZWAdsStartManager.h */,
+				925F8B5C1EDFF6EA009B0217 /* ZWAdsStartManager.m */,
+			);
+			name = AdsStart;
+			sourceTree = "<group>";
+		};
+		92CD3FB21EDEBE0800269925 = {
+			isa = PBXGroup;
+			children = (
+				92CD3FBD1EDEBE0800269925 /* ZWAdsStart */,
+				92CD3FD71EDEBE0800269925 /* ZWAdsStartTests */,
+				92CD3FE21EDEBE0800269925 /* ZWAdsStartUITests */,
+				92CD3FBC1EDEBE0800269925 /* Products */,
+				E65D98A1DD0954EBE80C8101 /* Pods */,
+				7240644AE5630BB2E35EADE4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		92CD3FBC1EDEBE0800269925 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92CD3FBB1EDEBE0800269925 /* ZWAdsStart.app */,
+				92CD3FD41EDEBE0800269925 /* ZWAdsStartTests.xctest */,
+				92CD3FDF1EDEBE0800269925 /* ZWAdsStartUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		92CD3FBD1EDEBE0800269925 /* ZWAdsStart */ = {
+			isa = PBXGroup;
+			children = (
+				925F8B5A1EDFF6A8009B0217 /* AdsStart */,
+				92CD3FC11EDEBE0800269925 /* AppDelegate.h */,
+				92CD3FC21EDEBE0800269925 /* AppDelegate.m */,
+				92CD3FC41EDEBE0800269925 /* ViewController.h */,
+				92CD3FC51EDEBE0800269925 /* ViewController.m */,
+				92CD3FC71EDEBE0800269925 /* Main.storyboard */,
+				92CD3FCA1EDEBE0800269925 /* Assets.xcassets */,
+				92CD3FCC1EDEBE0800269925 /* LaunchScreen.storyboard */,
+				92CD3FCF1EDEBE0800269925 /* Info.plist */,
+				92CD3FBE1EDEBE0800269925 /* Supporting Files */,
+			);
+			path = ZWAdsStart;
+			sourceTree = "<group>";
+		};
+		92CD3FBE1EDEBE0800269925 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92CD3FBF1EDEBE0800269925 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		92CD3FD71EDEBE0800269925 /* ZWAdsStartTests */ = {
+			isa = PBXGroup;
+			children = (
+				92CD3FD81EDEBE0800269925 /* ZWAdsStartTests.m */,
+				92CD3FDA1EDEBE0800269925 /* Info.plist */,
+			);
+			path = ZWAdsStartTests;
+			sourceTree = "<group>";
+		};
+		92CD3FE21EDEBE0800269925 /* ZWAdsStartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				92CD3FE31EDEBE0800269925 /* ZWAdsStartUITests.m */,
+				92CD3FE51EDEBE0800269925 /* Info.plist */,
+			);
+			path = ZWAdsStartUITests;
+			sourceTree = "<group>";
+		};
+		E65D98A1DD0954EBE80C8101 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C1B38956E510FA463307E20B /* Pods-ZWAdsStart.debug.xcconfig */,
+				A6FBF9E6420A4F934EC05144 /* Pods-ZWAdsStart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		92CD3FBA1EDEBE0800269925 /* ZWAdsStart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92CD3FE81EDEBE0800269925 /* Build configuration list for PBXNativeTarget "ZWAdsStart" */;
+			buildPhases = (
+				11DA2A4C7F33206D808152EA /* [CP] Check Pods Manifest.lock */,
+				92CD3FB71EDEBE0800269925 /* Sources */,
+				92CD3FB81EDEBE0800269925 /* Frameworks */,
+				92CD3FB91EDEBE0800269925 /* Resources */,
+				58E0E433E13FFCD68181A326 /* [CP] Embed Pods Frameworks */,
+				C8E0120ADBAE041F860F466D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZWAdsStart;
+			productName = ZWAdsStart;
+			productReference = 92CD3FBB1EDEBE0800269925 /* ZWAdsStart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		92CD3FD31EDEBE0800269925 /* ZWAdsStartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92CD3FEB1EDEBE0800269925 /* Build configuration list for PBXNativeTarget "ZWAdsStartTests" */;
+			buildPhases = (
+				92CD3FD01EDEBE0800269925 /* Sources */,
+				92CD3FD11EDEBE0800269925 /* Frameworks */,
+				92CD3FD21EDEBE0800269925 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92CD3FD61EDEBE0800269925 /* PBXTargetDependency */,
+			);
+			name = ZWAdsStartTests;
+			productName = ZWAdsStartTests;
+			productReference = 92CD3FD41EDEBE0800269925 /* ZWAdsStartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		92CD3FDE1EDEBE0800269925 /* ZWAdsStartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92CD3FEE1EDEBE0800269925 /* Build configuration list for PBXNativeTarget "ZWAdsStartUITests" */;
+			buildPhases = (
+				92CD3FDB1EDEBE0800269925 /* Sources */,
+				92CD3FDC1EDEBE0800269925 /* Frameworks */,
+				92CD3FDD1EDEBE0800269925 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				92CD3FE11EDEBE0800269925 /* PBXTargetDependency */,
+			);
+			name = ZWAdsStartUITests;
+			productName = ZWAdsStartUITests;
+			productReference = 92CD3FDF1EDEBE0800269925 /* ZWAdsStartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		92CD3FB31EDEBE0800269925 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = ABC.com;
+				TargetAttributes = {
+					92CD3FBA1EDEBE0800269925 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					92CD3FD31EDEBE0800269925 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 92CD3FBA1EDEBE0800269925;
+					};
+					92CD3FDE1EDEBE0800269925 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 92CD3FBA1EDEBE0800269925;
+					};
+				};
+			};
+			buildConfigurationList = 92CD3FB61EDEBE0800269925 /* Build configuration list for PBXProject "ZWAdsStart" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 92CD3FB21EDEBE0800269925;
+			productRefGroup = 92CD3FBC1EDEBE0800269925 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				92CD3FBA1EDEBE0800269925 /* ZWAdsStart */,
+				92CD3FD31EDEBE0800269925 /* ZWAdsStartTests */,
+				92CD3FDE1EDEBE0800269925 /* ZWAdsStartUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		92CD3FB91EDEBE0800269925 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92CD3FCE1EDEBE0800269925 /* LaunchScreen.storyboard in Resources */,
+				92CD3FCB1EDEBE0800269925 /* Assets.xcassets in Resources */,
+				92CD3FC91EDEBE0800269925 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CD3FD21EDEBE0800269925 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CD3FDD1EDEBE0800269925 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11DA2A4C7F33206D808152EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		58E0E433E13FFCD68181A326 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZWAdsStart/Pods-ZWAdsStart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8E0120ADBAE041F860F466D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZWAdsStart/Pods-ZWAdsStart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		92CD3FB71EDEBE0800269925 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925F8B5D1EDFF6EA009B0217 /* ZWAdsStartManager.m in Sources */,
+				92CD3FC61EDEBE0800269925 /* ViewController.m in Sources */,
+				926EDBD81EDEBF5F006DD6A9 /* ZWAdsStartView.m in Sources */,
+				925F8B591EDECD9A009B0217 /* ZWAdsViewController.m in Sources */,
+				92CD3FC31EDEBE0800269925 /* AppDelegate.m in Sources */,
+				92CD3FC01EDEBE0800269925 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CD3FD01EDEBE0800269925 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92CD3FD91EDEBE0800269925 /* ZWAdsStartTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92CD3FDB1EDEBE0800269925 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92CD3FE41EDEBE0800269925 /* ZWAdsStartUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		92CD3FD61EDEBE0800269925 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92CD3FBA1EDEBE0800269925 /* ZWAdsStart */;
+			targetProxy = 92CD3FD51EDEBE0800269925 /* PBXContainerItemProxy */;
+		};
+		92CD3FE11EDEBE0800269925 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 92CD3FBA1EDEBE0800269925 /* ZWAdsStart */;
+			targetProxy = 92CD3FE01EDEBE0800269925 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		92CD3FC71EDEBE0800269925 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92CD3FC81EDEBE0800269925 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		92CD3FCC1EDEBE0800269925 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92CD3FCD1EDEBE0800269925 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		92CD3FE61EDEBE0800269925 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		92CD3FE71EDEBE0800269925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92CD3FE91EDEBE0800269925 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1B38956E510FA463307E20B /* Pods-ZWAdsStart.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ZWAdsStart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ABC.ZWAdsStart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92CD3FEA1EDEBE0800269925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6FBF9E6420A4F934EC05144 /* Pods-ZWAdsStart.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ZWAdsStart/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ABC.ZWAdsStart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92CD3FEC1EDEBE0800269925 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZWAdsStartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ABC.ZWAdsStartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZWAdsStart.app/ZWAdsStart";
+			};
+			name = Debug;
+		};
+		92CD3FED1EDEBE0800269925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZWAdsStartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ABC.ZWAdsStartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZWAdsStart.app/ZWAdsStart";
+			};
+			name = Release;
+		};
+		92CD3FEF1EDEBE0800269925 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZWAdsStartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ABC.ZWAdsStartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZWAdsStart;
+			};
+			name = Debug;
+		};
+		92CD3FF01EDEBE0800269925 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZWAdsStartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ABC.ZWAdsStartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZWAdsStart;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		92CD3FB61EDEBE0800269925 /* Build configuration list for PBXProject "ZWAdsStart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92CD3FE61EDEBE0800269925 /* Debug */,
+				92CD3FE71EDEBE0800269925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92CD3FE81EDEBE0800269925 /* Build configuration list for PBXNativeTarget "ZWAdsStart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92CD3FE91EDEBE0800269925 /* Debug */,
+				92CD3FEA1EDEBE0800269925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92CD3FEB1EDEBE0800269925 /* Build configuration list for PBXNativeTarget "ZWAdsStartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92CD3FEC1EDEBE0800269925 /* Debug */,
+				92CD3FED1EDEBE0800269925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92CD3FEE1EDEBE0800269925 /* Build configuration list for PBXNativeTarget "ZWAdsStartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92CD3FEF1EDEBE0800269925 /* Debug */,
+				92CD3FF01EDEBE0800269925 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 92CD3FB31EDEBE0800269925 /* Project object */;
+}
