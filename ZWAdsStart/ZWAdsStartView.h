@@ -41,14 +41,4 @@ typedef void(^AdsJumpClickAction)(NSInteger timeInterval);//time 用户第几s�
 
 - (BOOL)startShowAds;
 
-///**
-// *  广告的图层显示
-// */
-//+ (instancetype)startAdsViewWithBgImageUrl:(NSString *)imageUrl withClickImageAction:(void(^)())action;
-//
-///**
-// *  开启动画
-// */
-//- (void)startAnimationTime:(NSUInteger)time WithCompletionBlock:(void(^)(ZWAdsStartView* imStartView))completionHandler;
-
 @end

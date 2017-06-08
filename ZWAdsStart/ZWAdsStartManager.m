@@ -17,7 +17,7 @@
 
 #define ADVIERTISEMENT_DOWNLOAD_KEY @"zwadvisement_download_key"
 
-NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image2";
+NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image";
 
 
 @interface ZWAdsModel : NSObject
@@ -46,6 +46,11 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image2";
 }
 
 @end
+
+
+//////////////////////////////////////////////////////////////
+//                      广告管理器
+//////////////////////////////////////////////////////////////
 
 
 @implementation ZWAdsStartManager
@@ -98,6 +103,7 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image2";
         [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:ADVIERTISEMENT_DOWNLOAD_KEY];
     }
 }
+
 
 + (ZWAdsModel *)adsStartImageUrl
 {

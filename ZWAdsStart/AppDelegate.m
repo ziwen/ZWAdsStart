@@ -26,8 +26,35 @@
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
-    //检测是否需要加载广告页，必须放在makeKeyAndVisiblev后面，否则不起作用
-    [ZWAdsStartManager shouldLoadAds];
+    
+    //用户自己点击启动
+    if(!launchOptions)
+    {
+        NSLog(@"用户点击app启动");
+        //检测是否需要加载广告页，必须放在makeKeyAndVisiblev后面，否则不起作用
+        [ZWAdsStartManager shouldLoadAds];
+    }
+    else
+    {
+        NSURL *url = [launchOptions objectForKey:UIApplicationLaunchOptionsURLKey];
+        //app 通过urlscheme启动
+        if (url) {
+            NSLog(@"app 通过urlscheme启动 url = %@",url);
+        }
+        UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+        //通过本地通知启动
+        if(localNotification)
+        {
+            NSLog(@"app 通过本地通知启动 localNotification = %@",localNotification);
+        }
+        NSDictionary *remoteCotificationDic = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+        //远程通知启动
+        if(remoteCotificationDic)
+        {
+            NSLog(@"app 通过远程推送通知启动 remoteCotificationDic = %@",remoteCotificationDic);
+        }
+    }
+  
     return YES;
 }
 
