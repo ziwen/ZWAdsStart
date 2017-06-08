@@ -29,7 +29,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSString *path = @"https://github.com/ziwen/ZWAdsStart";
+    NSString *path =_pageUrl;
     NSURL *url = [NSURL URLWithString:path];
     [_webView loadRequest:[NSURLRequest requestWithURL:url]];;
 }
@@ -42,12 +42,9 @@
 - (UIBarButtonItem *)leftNavBackButtonTitle:(NSString *)title target:(id)target action:(SEL)action {
     UIButton *bGoBack = [UIButton buttonWithType:UIButtonTypeCustom];
     bGoBack.frame = CGRectMake(0, 0, 46, 24);
-    
     bGoBack.titleLabel.font = [UIFont systemFontOfSize:17];
     [bGoBack setTitle:title forState:UIControlStateNormal];
-    [bGoBack setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [bGoBack setImage:[UIImage imageNamed:@"nav_back_normal"] forState:UIControlStateNormal];
-    //    [bGoBack setImage:[UIImage imageNamed:@"nav_back_highlighted"] forState:UIControlStateHighlighted];
+    [bGoBack setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [bGoBack setImageEdgeInsets:UIEdgeInsetsMake(0, -9, 0, 0)];
     [bGoBack addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     

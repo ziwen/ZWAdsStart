@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ZWAdsViewController : UIViewController
-
+@property (nonatomic, strong) NSString *pageUrl;
 @end

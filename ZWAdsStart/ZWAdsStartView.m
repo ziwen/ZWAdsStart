@@ -10,7 +10,13 @@
 #import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
 
-NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image1";
+
+
+#define kZWDEFAULTTIME 3
+
+#define BLOCK_ONE(block,result) if(block) block(result);
+#define BLOCK(block) if(block) block();
+
 
 //////////////////////////////////////////////////////////////
 //                      可点击的image视图
@@ -62,16 +68,13 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image1";
 
 @interface ZWAdsStartView ()
 
-@property (nonatomic, strong) UIImageView *bgImageViewDefault;
+@property (nonatomic, strong) UIImageView *bgImageViewDefault;//默认的背景视图
 @property (nonatomic, strong) ZWClickAdsImageView *bgImageView;
 @property (nonatomic, strong) UIButton *timeButton;
 
-@property (nonatomic, copy) void(^imageClickAction)();
-@property (nonatomic, copy) void(^adsViewCompletion)(ZWAdsStartView *imStartView);
-
 @property (nonatomic, assign) BOOL isImageDownloaded;
 
-@property (nonatomic) NSUInteger timeNum;
+@property (nonatomic) NSUInteger timeNum; //显示的数值
 @property (nonatomic, strong) NSTimer *timer;//计时器
 
 @end
@@ -80,27 +83,66 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image1";
 @implementation ZWAdsStartView
 #pragma mark - private method
 
-- (instancetype)initWithBgImageUrl:(NSString *)imageUrl withClickImageAction:(void(^)())action
+
+- (instancetype)init
 {
-    self = [super initWithFrame:[UIScreen mainScreen].bounds];
-    if (self)
-    {
+    self = [super init];
+    if (self) {
+
+        [self setFrame:[UIScreen mainScreen].bounds];
         _isImageDownloaded = NO;
-        _imageClickAction = action;
+        self.time = kZWDEFAULTTIME;
         
+    }
+    return self;
+}
+
+-(void)setTime:(NSUInteger)time
+{
+    _time = time;
+    _timeNum = time;
+}
+
+- (BOOL)loadImage
+{
+    SDWebImageManager *imageMngr = [SDWebImageManager sharedManager];
+    
+    NSURL *imageURL = [NSURL URLWithString:self.imageUrl];
+    // 将需要缓存的图片加载进来
+    BOOL cachedBool = [imageMngr cachedImageExistsForURL:imageURL];
+    
+    
+    BOOL diskBool = [imageMngr diskImageExistsForURL:imageURL];
+    if (cachedBool || diskBool)
+    {
+        _timeButton.hidden = NO;
+        [self.bgImageView sd_setImageWithURL:imageURL placeholderImage:[[self class] getTheLaunchImage]];
+        _isImageDownloaded = YES;
+    }
+    else
+    {
+        _timeButton.hidden = YES;
+        self.bgImageView.image = [[self class] getTheLaunchImage];;
+        _isImageDownloaded = NO;
+    }
+
+    return !_timeButton.hidden;
+}
+
+- (UIImageView *)bgImageViewDefault
+{
+    if (!_bgImageViewDefault)
+    {
         _bgImageViewDefault = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _bgImageViewDefault.contentMode = UIViewContentModeScaleToFill;
         _bgImageViewDefault.image = [[self class] getTheLaunchImage];
+    }
+    return _bgImageViewDefault;
+}
 
-        [self addSubview:_bgImageViewDefault];
-        
-        _bgImageView = [[ZWClickAdsImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _bgImageView.alpha = 0.0;
-        _bgImageView.contentMode = UIViewContentModeScaleToFill;
-        [_bgImageView addTarget:self action:@selector(imageClicked:)];
-        [self addSubview:_bgImageView];
-
-        //时间按钮
+- (UIButton *)timeButton
+{
+    if (!_timeButton) {
         _timeButton = [[UIButton alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width - 13 - 52, 20, 52, 25)];
         _timeButton.layer.cornerRadius = 25/2.0f;
         [_timeButton setClipsToBounds:YES];
@@ -108,67 +150,53 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image1";
         _timeButton.titleLabel.font = [UIFont systemFontOfSize:13];
         [_timeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_timeButton addTarget:self action:@selector(jumpClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [_bgImageView addSubview:_timeButton];
-
-
-        //加载图片
-        SDWebImageManager *imageMngr = [SDWebImageManager sharedManager];
-     
-        // 将需要缓存的图片加载进来
-        BOOL cachedBool = [imageMngr cachedImageExistsForURL:[NSURL URLWithString:imageUrl]];
-       
-    
-        BOOL diskBool = [imageMngr diskImageExistsForURL:[NSURL URLWithString:imageUrl]];
-        if (cachedBool || diskBool)
-        {
-            _timeButton.hidden = NO;
-            [self.bgImageView sd_setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:[[self class] getTheLaunchImage]];
-            _isImageDownloaded = YES;
-        }
-        else
-        {
-            _timeButton.hidden = YES;
-            self.bgImageView.image = [[self class] getTheLaunchImage];;
-            [imageMngr downloadImageWithURL:[NSURL URLWithString:imageUrl] options:SDWebImageRefreshCached progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-
-            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-               [[NSUserDefaults standardUserDefaults] setObject:imageUrl forKey:kZWDSSTARTIMAGE];
-            }];
-            _isImageDownloaded = NO;
-        }
     }
-    return self;
+    return _timeButton;
+}
+
+-(ZWClickAdsImageView *)bgImageView
+{
+    if (!_bgImageView) {
+        _bgImageView = [[ZWClickAdsImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _bgImageView.alpha = 0.0;
+        _bgImageView.contentMode = UIViewContentModeScaleToFill;
+        [_bgImageView addTarget:self action:@selector(imageClicked:)];
+    }
+    return _bgImageView;
 }
 
 
 - (void)imageClicked:(id)sender
 {
-    if (self.imageClickAction && self.isImageDownloaded)
+    if (self.isImageDownloaded)
     {
-        self.imageClickAction();
-        //删除广告
-        [self removeAdsView];
+        BLOCK(_imageClickAction);
     }
+
+    //删除广告
+    [self removeAdsView];
 }
 
 - (void)jumpClicked:(UIButton *)sender
 {
+    NSInteger timeInterval = _time - _timeNum > 0 ? _time - _timeNum : _time;
+    BLOCK_ONE(_adsJumpClickAction, timeInterval);
     [self removeAdsView];
 }
 
 - (void)timerAction:(id)sender
 {
-    if (_timeNum == 0)
+    if (_timeNum <= 0)
     {
         [self removeAdsView];
+        BLOCK(_adsCompletion);
         return;
     }
 
     _timeNum--;
     if (_isImageDownloaded)
     {
-        NSString *title = [NSString stringWithFormat:@"跳过%zd",_timeNum];
-        [_timeButton setTitle:title forState:UIControlStateNormal];
+        [self setTimeButtonNumber];
     }
 }
 
@@ -180,6 +208,7 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image1";
     }
     _timer = nil;
 
+
     __weak typeof(self)  weakSelf = self;
 
     [UIView animateWithDuration:0.7 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -187,40 +216,75 @@ NSString * const kZWDSSTARTIMAGE = @"zw_ads_start_image1";
         weakSelf.alpha = 0.0f;
     } completion:^(BOOL finished) {
         [weakSelf removeFromSuperview];
-        if (_adsViewCompletion)
-        {
-            _adsViewCompletion(weakSelf);
-        }
+
     }];
 }
 
-- (void)startAnimationTime:(NSUInteger)time WithCompletionBlock:(void(^)(ZWAdsStartView *imStartView))completionHandler
+- (void)buildView
 {
-    _timeNum = time;
-    _adsViewCompletion = completionHandler;
-    [[[[UIApplication sharedApplication] delegate] window] addSubview:self];
-    [[[[UIApplication sharedApplication] delegate] window] bringSubviewToFront:self];
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
-    [[UIApplication sharedApplication].keyWindow bringSubviewToFront:self];
-    [UIView animateWithDuration:0.5f animations:^{
-        _bgImageView.alpha = 1.0f;
-    }];
+    //默认的应用启动图
+    [self addSubview:self.bgImageViewDefault];
     
+    //图片源视图
+    [self addSubview:self.bgImageView];
+    
+    //时间按钮
+    [self.bgImageView addSubview:self.timeButton];
+    
+}
+
+- (BOOL)startShowAds
+{
+    if (NO == [self isViewContainSelf])
+    {
+        BOOL loadSuccess = [self loadImage];
+        [self buildView];
+
+        if (loadSuccess)
+        {
+            [[[[UIApplication sharedApplication] delegate] window] addSubview:self];
+            [[[[UIApplication sharedApplication] delegate] window] bringSubviewToFront:self];
+            [[UIApplication sharedApplication].keyWindow addSubview:self];
+            [[UIApplication sharedApplication].keyWindow bringSubviewToFront:self];
+
+            [UIView animateWithDuration:0.5f animations:^{
+                _bgImageView.alpha = 1.0f;
+            }];
+
+
+            [self setTimeButtonNumber];
+
+            //开始计时
+            [_timer invalidate];
+            _timer = nil;
+            _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
+            return YES;
+        }
+        else
+        {
+            BLOCK(_adsCompletion);
+            return NO;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)isViewContainSelf
+{
+    NSArray *views = [[[UIApplication sharedApplication] delegate] window].subviews;
+    BOOL isContionSelf = NO;
+    for (UIView *view in views) {
+        if ([view isEqual:self]) {
+            isContionSelf = YES;
+        }
+    }
+    return isContionSelf;
+}
+
+- (void)setTimeButtonNumber
+{
     NSString *title = [NSString stringWithFormat:@"跳过%zd",_timeNum];
     [_timeButton setTitle:title forState:UIControlStateNormal];
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-}
-
-
-+ (instancetype)startAdsViewWithBgImageUrl:(NSString *)imageUrl withClickImageAction:(void(^)())action
-{
-    return [[[self class] alloc] initWithBgImageUrl:imageUrl withClickImageAction:action];
-}
-
-
-+ (NSString *)adsStartImageUrl
-{
-   return [[NSUserDefaults standardUserDefaults] objectForKey:kZWDSSTARTIMAGE];
 }
 
 + (UIImage *)getTheLaunchImage
